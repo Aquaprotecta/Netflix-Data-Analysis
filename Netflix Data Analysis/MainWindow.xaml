@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Netflix_Data_Analysis"
+        xmlns:viewModel="clr-namespace:Netflix_Data_Analysis.MVVM.ViewModel"
         mc:Ignorable="d"
         Height="600" Width="920"
         WindowStyle="None"
@@ -11,7 +12,11 @@
         Background="Transparent"
         AllowsTransparency="True">
 
-    <Border Background="#424549"
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Border Background="#1e2124"
             CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -20,23 +25,48 @@
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="75" />
+                <RowDefinition Height="25"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <!-- Menu Buttons -->
-            <StackPanel Grid.Row="1" Grid.Column="0" Background="	#1e2124">
+            <!-- Top Menu -->
+            <Grid Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 10 0">
+                <Button x:Name="CloseButton"
+                        Content="x"
+                        Click="CloseButton_Click"
+                        FontSize="14"/>
+            </Grid>
+
+            <!-- Side Menu Buttons -->
+            <StackPanel Grid.Row="1" Grid.Column="0" Background="#1e2124">
                 <RadioButton Content="Home"
                              Height="50"
                              Foreground="White"
-                             FontSize="14"/>
+                             FontSize="14"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
+
                 <RadioButton Content="Settings"
                              Height="50"
                              Foreground="White"
-                             FontSize="14"/>
+                             FontSize="14"
+                             Command="{Binding SettingsViewCommand}"/>
             </StackPanel>
-            
-            
+
+            <!-- API Status -->
+            <TextBlock Text="API status here"
+                           Foreground="white"
+                           FontSize="14"
+                           VerticalAlignment="Bottom"
+                           Grid.Column="0"
+                           Grid.Row="1"
+                           Padding="10"/>
+
+            <!-- Main Content -->
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Content="{Binding CurrentView}"/>
+
         </Grid>
     </Border>
 </Window>
