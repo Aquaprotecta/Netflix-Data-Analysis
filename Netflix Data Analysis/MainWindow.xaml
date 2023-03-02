@@ -11,7 +11,7 @@
         Background="Transparent"
         AllowsTransparency="True">
 
-    <Border Background="#424549"
+    <Border Background="#733227"
             CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -20,23 +20,9 @@
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="75" />
+                <RowDefinition Height="75"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-
-            <!-- Menu Buttons -->
-            <StackPanel Grid.Row="1" Grid.Column="0" Background="	#1e2124">
-                <RadioButton Content="Home"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"/>
-                <RadioButton Content="Settings"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"/>
-            </StackPanel>
-            
-            
         </Grid>
     </Border>
 </Window>
