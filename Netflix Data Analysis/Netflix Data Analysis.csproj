@@ -13,4 +13,10 @@
     <PackageReference Include="AdonisUI.ClassicTheme" Version="1.17.1" />
   </ItemGroup>
 
+  <ItemGroup>
+	<Folder Include="MVVM\Model\" />
+	  <Folder Include="MVVM\View\" />
+	  <Folder Include="MVVM\ViewModel\" />
+  </ItemGroup>
+
 </Project>

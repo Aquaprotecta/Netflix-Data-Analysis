@@ -6,13 +6,18 @@
         xmlns:local="clr-namespace:Netflix_Data_Analysis"
         xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
         xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        xmlns:viewModel="clr-namespace:Netflix_Data_Analysis.MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Data Analysis" Height="450" Width="800">
 
     <Window.Style>
         <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
     </Window.Style>
-
+    
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -20,15 +25,26 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
+        <!-- Side menu -->
         <StackPanel Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}">
             <TextBlock Margin="{adonisUi:Space}">Pages</TextBlock>
             <ListBox>
                 <ListBoxItem>Home</ListBoxItem>
                 <ListBoxItem>Settings</ListBoxItem>
             </ListBox>
-            
-            
         </StackPanel>
+        
+        <!-- API status -->
+        <TextBlock Text="API status here"
+                   Grid.Column="0"
+                   VerticalAlignment="Bottom"
+                   Padding="10"/>
+        
 
+        <!-- Main Content -->
+        <ContentControl Grid.Column="1"
+                        Content="{Binding CurrentView}"/>
+        
+        
     </Grid>
 </adonisControls:AdonisWindow>
