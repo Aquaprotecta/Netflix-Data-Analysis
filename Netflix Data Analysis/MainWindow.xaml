@@ -13,11 +13,11 @@
     <Window.Style>
         <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
     </Window.Style>
-    
+
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
-    
+
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -33,18 +33,19 @@
                 <ListBoxItem>Settings</ListBoxItem>
             </ListBox>
         </StackPanel>
-        
+
         <!-- API status -->
-        <TextBlock Text="API status here"
-                   Grid.Column="0"
+        <TextBlock Grid.Column="0"
                    VerticalAlignment="Bottom"
-                   Padding="10"/>
-        
+                   Padding="10"
+                   x:Name="API_status"
+                   TextWrapping="Wrap"/>
+
 
         <!-- Main Content -->
         <ContentControl Grid.Column="1"
-                        Content="{Binding CurrentView}"/>
-        
-        
+                        Content="{Binding CurrentView}" Grid.ColumnSpan="2"/>
+
+
     </Grid>
 </adonisControls:AdonisWindow>

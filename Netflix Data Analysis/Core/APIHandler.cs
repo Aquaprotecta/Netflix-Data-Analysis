@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+
+namespace Netflix_Data_Analysis.Core
+{
+    public class APIHandler
+    {
+        public async Task<string> GetApiResponseAsync(string apiUrl)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    return responseContent;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+    }
+}

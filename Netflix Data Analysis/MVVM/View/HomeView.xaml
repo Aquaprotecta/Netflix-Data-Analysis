@@ -6,10 +6,11 @@
              xmlns:local="clr-namespace:Netflix_Data_Analysis.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
+
     <Grid>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"><Run Text="Please insert CSV file to continue."/><LineBreak/><Run/></TextBlock>
-        <Button Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Width="77"/>
+        <Button Click="SelectFile" Content="Browse a file" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Width="101"/>
+
     </Grid>
-    
+
 </UserControl>
