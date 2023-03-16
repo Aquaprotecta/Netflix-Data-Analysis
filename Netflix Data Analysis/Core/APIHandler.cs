@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
-using System.Threading.Tasks;
 
 
 namespace Netflix_Data_Analysis.Core
@@ -15,16 +14,22 @@ namespace Netflix_Data_Analysis.Core
         {
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync(apiUrl);
-
-                if (response.IsSuccessStatusCode)
+                try
                 {
-                    string responseContent = await response.Content.ReadAsStringAsync();
-                    return responseContent;
+                    HttpResponseMessage response = await client.GetAsync(apiUrl);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string responseContent = await response.Content.ReadAsStringAsync();
+                        return responseContent;
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
-                else
+                catch (HttpRequestException ex)
                 {
-                    return null;
+                    return "Error connecting to API: " + ex.Message;
                 }
             }
         }
