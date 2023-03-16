@@ -25,8 +25,10 @@ def process_csv():
     df['Start Time'] = pd.to_datetime(df['Start Time'], utc=True)
     df['Duration'] = pd.to_timedelta(df['Duration'])
     df = df[(df['Duration'] > '0 days 00:01:00')]
-    # df['Duration'].sum()
     
+    
+    
+    #Final objects to return
     totalTime = str(df['Duration'].sum())
     
     return totalTime
