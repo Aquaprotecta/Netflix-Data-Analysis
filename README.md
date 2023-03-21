@@ -1,3 +1,5 @@
+![GitHub Repo stars](https://img.shields.io/github/stars/aquaprotecta/Netflix-Data-Analysis?style=social) ![GitHub](https://img.shields.io/github/license/aquaprotecta/Netflix-Data-Analysis) 
+
 # Netflix Data Analysis
 A simple analysis tool for getting an in depth look at your Netflix viewing habits. The current version is not finished, and many features will be reworked/added in the near future.
 
