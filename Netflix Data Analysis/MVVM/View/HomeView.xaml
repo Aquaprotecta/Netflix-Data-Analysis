@@ -11,7 +11,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" FontSize="14"><Run Text="Please insert CSV file to continue."/><LineBreak/><Run/></TextBlock>
         <Button Click="SelectFile" Content="Browse a file" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Width="108"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="269" FontSize="10"><Run Text="Keep in mind that only the correct Netflix CSV file will work."/><LineBreak/><Run/></TextBlock>
-        <TextBlock x:Name="watchTime" HorizontalAlignment="Left" Margin="554,43,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.641,-1.617" FontSize="16"/>
+        <TextBlock x:Name="watchTime" HorizontalAlignment="Left" Margin="486,43,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.641,-1.617" FontSize="16"/>
 
     </Grid>
 
