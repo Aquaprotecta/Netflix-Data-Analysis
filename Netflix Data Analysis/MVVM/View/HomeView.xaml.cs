@@ -66,6 +66,7 @@ namespace Netflix_Data_Analysis.MVVM.View
                             MessageBox.Show("success");
                             string responseContent = await response.Content.ReadAsStringAsync();
                             MessageBox.Show(responseContent);
+                            watchTime.Text= "Total watch time: " + responseContent;
                         }
                         else
                         {

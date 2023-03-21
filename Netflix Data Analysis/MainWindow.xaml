@@ -21,21 +21,11 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="125" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <!-- Side menu -->
-        <StackPanel Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}">
-            <TextBlock Margin="{adonisUi:Space}">Pages</TextBlock>
-            <ListBox>
-                <ListBoxItem>Home</ListBoxItem>
-                <ListBoxItem>Settings</ListBoxItem>
-            </ListBox>
-        </StackPanel>
-
         <!-- API status -->
-        <TextBlock Grid.Column="0"
+        <TextBlock Grid.Column="1"
                    VerticalAlignment="Bottom"
                    Padding="10"
                    x:Name="API_status"
